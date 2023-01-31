@@ -7,7 +7,7 @@ class App extends Component {
     super()
     this.state = {
       ideas: [
-
+        {id: 1, title: 'Fix linkedIn', description: 'Use career flow linked in optimizer'}
       ] 
     }
   }
@@ -16,7 +16,8 @@ class App extends Component {
     return (
       <div className='App-header'>
         <h1>IdeaBox!</h1>
-        <Ideas />
+        {!this.state.ideas.length && <h3>No Ideas Yet -- Why Don't We Make Some?</h3>}
+        <Ideas ideas={this.state.ideas}/>
       </div>
     )
   }
