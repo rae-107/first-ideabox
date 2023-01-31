@@ -10,6 +10,25 @@ class Form extends Component {
     }
   }
 
+  handleChange = event => {
+    const { name, value } = event.target
+    this.setState({[name]: value})
+  }
+
+  handleSubmit = event => {
+    event.preventDefault()
+    const newIdea = {
+      id: Date.now(),
+      ...this.state
+    }
+    this.props.addIdea(newIdea)
+    this.clearInputs()
+  }
+
+  clearInputs = () => {
+    this.setState({title: '', description: ''})
+  }
+
   render() {
     return (
       <div>
@@ -18,16 +37,16 @@ class Form extends Component {
           value={this.state.title}
           placeholder="Title"
           name='title'
-          onChange={this.handleChange}
+          onChange={event => this.handleChange(event)}
         />
         <input
           type='text'
           value={this.state.description}
           placeholder="Description"
           name='description'
-          onChange={this.handleChange}
+          onChange={event => this.handleChange(event)}
         />
-        <button>SUBMIT!</button>
+        <button onClick={event => this.handleSubmit(event)}>SUBMIT!</button>
       </div>
     )
   }

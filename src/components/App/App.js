@@ -17,7 +17,7 @@ class App extends Component {
     this.setState({ideas: [...this.state.ideas, newIdea]}) 
   }
 
-  render() {
+  render() { 
     return (
       <main className='App-header'>
         <h1>IdeaBox!</h1>
