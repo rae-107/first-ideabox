@@ -1,14 +1,14 @@
-import React from 'react'
-import './Card.css'
+import React from "react";
+import "./Card.css";
 
-const Card = ({ title, description }) => {
+const Card = ({ id, title, description, deleteIdea }) => {
   return (
-    <div className='Card'>
+    <div className="Card">
       <h3>{title}</h3>
       <p>{description}</p>
-      <button>🗑</button>
+      <button onClick={() => deleteIdea(id)}>🗑</button>
     </div>
-  )
-}
+  );
+};
 
-export default Card
+export default Card;
