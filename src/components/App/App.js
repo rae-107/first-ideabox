@@ -7,13 +7,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      ideas: [
-        {
-          id: 1,
-          title: "Fix linkedIn",
-          description: "Use career flow linked in optimizer",
-        },
-      ],
+      ideas: [],
     };
   }
 
