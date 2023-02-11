@@ -7,10 +7,9 @@ class App extends Component {
 
   render() {
     return (
-      <>
-        {/* <Form /> */}
-        <Ideas />
-      </>
+        <>
+        Studio Ghibli
+        </>
     )
   }
 }
